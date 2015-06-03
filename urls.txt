@@ -1,0 +1,7 @@
+{
+	"/dsp/signin":"rtb/signin.mako",
+	"/dsp/overview":"rtb/campaign.mako",
+	"/dsp/taget_publisher":"rtb/target/taget_publisher.mako",
+	"/dsp/analysis":"rtb/analysis.mako",
+	"/dsp/custom_download":"rtb/custom_download.mako"
+}
