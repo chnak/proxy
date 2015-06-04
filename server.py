@@ -107,8 +107,11 @@ class ProxyHandler(tornado.web.RequestHandler):
                 v = response.headers.get(header)
                 if header=='Location' and v:
                     uri=list(urlparse.urlparse(v))
-                    uri[1]=host
+                    if uri[1]==options.api_host:
+                        uri[1]=host
                     v=urlparse.urlunparse(uri)
+                    self.set_header(header, v)
+                    return self.finish()
                 if v and header!='Content-Length':
                     self.set_header(header, v)
             for name in api_setting.keys():
